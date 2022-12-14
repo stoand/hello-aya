@@ -1,0 +1,18 @@
+open import Arith::Nat
+
+open import Paths
+
+def par1 (A : Type) (u : A) (i : I) : Partial (~ i) A =>
+  {| ~ i := u |}
+
+// By @imkiva, in PR
+def p1 (A : Type) (a : A) (i : I) : Partial (~ i) A =>
+  {| ~ i := a |}
+def p2 (A : Type) (b : A) (j : I) : Partial (~ j) A =>
+  {| ~ j := b |}
+def p1=p2 (A : Type) (a : A) (i : I) : p1 A a i = p2 A a i =>
+  idp
+
+def cmp {A : Type} (x : A)
+  : [| i j |] (Partial (~ j) A) { ~ i := p1 A x j }
+  => \i => \j => p2 A x j

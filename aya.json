@@ -1,0 +1,11 @@
+{
+    "ayaVersion": "0.26",
+    "name": "hello-aya",
+    "version": "0.0.1",
+    "group": "org.aya-prover",
+    "dependency": {
+        "std": {
+            "file": "/home/andreas/.aya/std"
+        }
+    }
+}
